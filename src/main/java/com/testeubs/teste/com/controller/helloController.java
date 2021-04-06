@@ -1,4 +1,4 @@
-package com.testeubs.teste.com.testeubs.teste.controller;
+package com.testeubs.teste.com.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,5 +10,5 @@ public class helloController {
     String home() {
         return "Hello, World!";
     }
-
+	
 }
