@@ -2,6 +2,8 @@ package com.testeubs.teste.com.service.impl;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -18,7 +20,6 @@ import com.testeubs.teste.com.model.helper.EstoqueHelper;
 import com.testeubs.teste.com.repository.EstoqueRepository;
 import com.testeubs.teste.com.repository.ProdutoRepository;
 import com.testeubs.teste.com.service.ProdutoService;
-import com.testeubs.teste.com.utils.AbstractReader;
 import com.testeubs.teste.com.utils.Constantes;
 
 @Service
@@ -58,7 +59,6 @@ public class ProdutoServiceImpl implements ProdutoService {
 		
 		Iterable<Estoque> it = listaEstoques;
 		estoqueRepository.saveAll(it);
-		
 		return false;
 		
 	}
@@ -74,7 +74,7 @@ public class ProdutoServiceImpl implements ProdutoService {
 	}
 	
 	public List<EstoqueHelper> lerEstoquesEmArquivoJSon(String path) throws IOException {
-        String jsonText = AbstractReader.readJson(path);
+        String jsonText = String.join(" ", Files.readAllLines(Paths.get(path), StandardCharsets.UTF_8));
         Type collectionType = new TypeToken<List<EstoqueHelper>>(){}.getType();
         List<EstoqueHelper> lista = new Gson().fromJson(jsonText, collectionType);
         return lista;

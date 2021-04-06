@@ -1,6 +1,5 @@
 package com.testeubs.teste.com.controller;
 
-import java.io.IOException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,6 +28,7 @@ public class ProdutoController {
         return response;
     }
 	
+	@Transactional
 	@ResponseBody
 	@RequestMapping(value="/carregarDados", method=RequestMethod.GET)
     public ResponseEntity<String> carregarDados()  {
