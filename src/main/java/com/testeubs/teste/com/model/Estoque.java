@@ -4,13 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
@@ -19,15 +19,24 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @ToString
 @AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
-public class Produto {
+public class Estoque {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int codigo;
 	
-	private String sigla;
+	@ManyToOne
+	@JoinColumn(name="sigla")
+	private Produto produto;
 	
-	@OneToMany(mappedBy = "produto")
-	private List<Estoque> estoques;
+	private long quantity;
+	
+	private float price;
+	
+	private String type;
+	
+	private String industry;
+	
+	private String origin;
 	
 }

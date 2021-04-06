@@ -1,10 +1,10 @@
 package com.testeubs.teste.com.service;
 
 import java.util.List;
-import com.testeubs.teste.com.model.Produto;
+import com.testeubs.teste.com.model.Venda;
 
 public interface ProdutoService {
 	
-	public List<Produto> listarProdutos();
+	public List<Venda> calcularVenda(String produtoSigla, int qtdeLogistas);
 	
 }
