@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+
 @Entity
 @Getter
 @Setter
@@ -25,6 +27,7 @@ public class Estoque {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int codigo;
 	
+	@JsonAlias("product")
 	@ManyToOne
 	@JoinColumn(name="sigla")
 	private Produto produto;

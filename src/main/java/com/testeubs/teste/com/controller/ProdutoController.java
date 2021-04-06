@@ -1,5 +1,6 @@
 package com.testeubs.teste.com.controller;
 
+import java.io.IOException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,6 +26,20 @@ public class ProdutoController {
     		                                         @RequestParam("qtdeLogistas") int qtdeLogistas) {
 		List<Venda> lista = produtoService.calcularVenda(produtoSigla, qtdeLogistas);
 		ResponseEntity<List<Venda>> response = new ResponseEntity<List<Venda>>(lista, HttpStatus.OK);
+        return response;
+    }
+	
+	@ResponseBody
+	@RequestMapping(value="/carregarDados", method=RequestMethod.GET)
+    public ResponseEntity<String> carregarDados()  {
+		ResponseEntity<String> response;
+		try {
+			produtoService.carregarDados();
+			response = new ResponseEntity<String>("Dados Carregados com sucesso.", HttpStatus.OK);
+		} catch (Exception e) {
+			response = new ResponseEntity<String>("Os dados não foram carregados!", HttpStatus.INTERNAL_SERVER_ERROR);
+			e.printStackTrace();
+		}
         return response;
     }
 	
