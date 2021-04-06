@@ -1,4 +1,4 @@
-{"data":[{"product":"FCCY","quantity":76,"price":"$3.40","type":"3XL","industry":"Savings Institutions","origin":"CA"},
+[{"product":"FCCY","quantity":76,"price":"$3.40","type":"3XL","industry":"Savings Institutions","origin":"CA"},
 {"product":"CFFN","quantity":67,"price":"$6.62","type":"XL","industry":"Savings Institutions","origin":"IA"},
 {"product":"TAIT","quantity":43,"price":"$9.58","type":"M","industry":"Electronic Components","origin":"CT"},
 {"product":"SHOO","quantity":9,"price":"$3.12","type":"XL","industry":"Shoe Manufacturing","origin":"NV"},
@@ -9997,4 +9997,4 @@
 {"product":"CSPI","quantity":95,"price":"$1.43","type":"XS","industry":"EDP Services","origin":"MI"},
 {"product":"BNSO","quantity":50,"price":"$8.05","type":"2XL","industry":"Industrial Machinery/Components","origin":"PA"},
 {"product":"TWMC","quantity":57,"price":"$0.77","type":"L","industry":"Consumer Electronics/Video Chains","origin":"TX"},
-{"product":"HLB","quantity":16,"price":"$6.22","type":"2XL","industry":"Mining & Quarrying of Nonmetallic Minerals (No Fuels)","origin":"IL"}]}
+{"product":"HLB","quantity":16,"price":"$6.22","type":"2XL","industry":"Mining & Quarrying of Nonmetallic Minerals (No Fuels)","origin":"IL"}]

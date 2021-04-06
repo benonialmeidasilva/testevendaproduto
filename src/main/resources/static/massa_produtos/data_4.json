@@ -1,4 +1,4 @@
-{"data":[{"product":"SGMS","quantity":34,"price":"$3.28","type":"M","industry":"EDP Services","origin":"AZ"},
+[{"product":"SGMS","quantity":34,"price":"$3.28","type":"M","industry":"EDP Services","origin":"AZ"},
 {"product":"TKC","quantity":50,"price":"$5.63","type":"2XL","industry":"Telecommunications Equipment","origin":"MO"},
 {"product":"APO","quantity":51,"price":"$3.55","type":"S","industry":"Investment Managers","origin":"TX"},
 {"product":"CLWT","quantity":24,"price":"$1.40","type":"XS","industry":"Diversified Electronic Products","origin":"NY"},
@@ -20997,4 +20997,4 @@
 {"product":"JBLU","quantity":82,"price":"$1.19","type":"S","industry":"Air Freight/Delivery Services","origin":"CA"},
 {"product":"CPAC","quantity":58,"price":"$9.52","type":"XS","industry":"Building Materials","origin":"VA"},
 {"product":"RCL","quantity":42,"price":"$8.74","type":"3XL","industry":"Marine Transportation","origin":"TX"},
-{"product":"MAIN","quantity":27,"price":"$9.18","type":"3XL","industry":"n/a","origin":"CA"}]}
+{"product":"MAIN","quantity":27,"price":"$9.18","type":"3XL","industry":"n/a","origin":"CA"}]

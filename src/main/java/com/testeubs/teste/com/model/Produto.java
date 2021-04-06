@@ -30,4 +30,10 @@ public class Produto {
 	@OneToMany(mappedBy = "produto")
 	private List<Estoque> estoques;
 	
+	
+	
+	public Produto(String sigla) {
+		this.sigla = sigla;
+	}
+	
 }

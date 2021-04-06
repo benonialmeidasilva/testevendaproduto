@@ -1,4 +1,4 @@
-{"data":[{"product":"CVX","quantity":75,"price":"$1.40","type":"S","industry":"Integrated oil Companies","origin":"IN"},
+[{"product":"CVX","quantity":75,"price":"$1.40","type":"S","industry":"Integrated oil Companies","origin":"IN"},
 {"product":"HCN","quantity":22,"price":"$0.63","type":"L","industry":"Real Estate Investment Trusts","origin":"OH"},
 {"product":"TPVG","quantity":46,"price":"$5.42","type":"2XL","industry":"n/a","origin":"IL"},
 {"product":"GAINO","quantity":41,"price":"$5.04","type":"L","industry":"n/a","origin":"FL"},
@@ -9997,4 +9997,4 @@
 {"product":"MTBC","quantity":78,"price":"$6.28","type":"3XL","industry":"n/a","origin":"CA"},
 {"product":"DTLA","quantity":86,"price":"$3.23","type":"M","industry":"n/a","origin":"CA"},
 {"product":"GALE","quantity":91,"price":"$7.08","type":"L","industry":"Major Pharmaceuticals","origin":"LA"},
-{"product":"WBAI","quantity":30,"price":"$7.49","type":"3XL","industry":"Services-Misc. Amusement & Recreation","origin":"MD"}]}
+{"product":"WBAI","quantity":30,"price":"$7.49","type":"3XL","industry":"Services-Misc. Amusement & Recreation","origin":"MD"}]
