@@ -37,7 +37,7 @@ public class ProdutoServiceImpl implements ProdutoService {
 	
 	
 	@Override
-	//@Transactional(propagation=Propagation.REQUIRES_NEW)
+	@Transactional(propagation=Propagation.REQUIRES_NEW)
 	public String carregarDados() throws Exception{
 		
 		Path pathArquivo1 = Paths.get(Constantes.PATHS_ARQUIVOS_JSON_PRODUTOS.PATH_ARQUIVO_1);
