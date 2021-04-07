@@ -48,9 +48,9 @@ public class ProdutoServiceImpl implements ProdutoService {
 		List<Estoque> listaEstoques = new ArrayList<Estoque>();
 		List<EstoqueHelper> listaItens = new ArrayList<EstoqueHelper>();
 		listaItens.addAll(lerEstoquesEmArquivoJSon(pathArquivo1.toAbsolutePath().toString()));
-		//listaItens.addAll(lerEstoquesEmArquivoJSon(pathArquivo2.toAbsolutePath().toString()));
-		//listaItens.addAll(lerEstoquesEmArquivoJSon(pathArquivo3.toAbsolutePath().toString()));
-		//listaItens.addAll(lerEstoquesEmArquivoJSon(pathArquivo4.toAbsolutePath().toString()));
+		listaItens.addAll(lerEstoquesEmArquivoJSon(pathArquivo2.toAbsolutePath().toString()));
+		listaItens.addAll(lerEstoquesEmArquivoJSon(pathArquivo3.toAbsolutePath().toString()));
+		listaItens.addAll(lerEstoquesEmArquivoJSon(pathArquivo4.toAbsolutePath().toString()));
 		listaItens.forEach(item -> {
 			Estoque estoque = new Estoque(obterProdutoExistenteOuNovo(item.getProduct()), item.getQuantity(),
 					                      Float.parseFloat(item.getPrice().replace("$", "")),
