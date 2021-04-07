@@ -25,7 +25,7 @@ public class Estoque {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int codigo;
 	
-	@ManyToOne
+	@ManyToOne(cascade=javax.persistence.CascadeType.MERGE)
 	@JoinColumn(name="sigla")
 	private Produto produto;
 	

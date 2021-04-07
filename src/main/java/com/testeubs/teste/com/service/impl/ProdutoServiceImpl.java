@@ -11,6 +11,9 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.testeubs.teste.com.model.Estoque;
@@ -34,7 +37,8 @@ public class ProdutoServiceImpl implements ProdutoService {
 	
 	
 	@Override
-	public boolean carregarDados() throws Exception{
+	//@Transactional(propagation=Propagation.REQUIRES_NEW)
+	public String carregarDados() throws Exception{
 		
 		Path pathArquivo1 = Paths.get(Constantes.PATHS_ARQUIVOS_JSON_PRODUTOS.PATH_ARQUIVO_1);
 		Path pathArquivo2 = Paths.get(Constantes.PATHS_ARQUIVOS_JSON_PRODUTOS.PATH_ARQUIVO_2);
@@ -44,22 +48,20 @@ public class ProdutoServiceImpl implements ProdutoService {
 		List<Estoque> listaEstoques = new ArrayList<Estoque>();
 		List<EstoqueHelper> listaItens = new ArrayList<EstoqueHelper>();
 		listaItens.addAll(lerEstoquesEmArquivoJSon(pathArquivo1.toAbsolutePath().toString()));
-		listaItens.addAll(lerEstoquesEmArquivoJSon(pathArquivo2.toAbsolutePath().toString()));
-		listaItens.addAll(lerEstoquesEmArquivoJSon(pathArquivo3.toAbsolutePath().toString()));
-		listaItens.addAll(lerEstoquesEmArquivoJSon(pathArquivo4.toAbsolutePath().toString()));
-		
+		//listaItens.addAll(lerEstoquesEmArquivoJSon(pathArquivo2.toAbsolutePath().toString()));
+		//listaItens.addAll(lerEstoquesEmArquivoJSon(pathArquivo3.toAbsolutePath().toString()));
+		//listaItens.addAll(lerEstoquesEmArquivoJSon(pathArquivo4.toAbsolutePath().toString()));
 		listaItens.forEach(item -> {
-			System.out.println("item: " + item.getIndustry());
-			Estoque estoque = new Estoque(new Produto(item.getProduct()), item.getQuantity(),
+			Estoque estoque = new Estoque(obterProdutoExistenteOuNovo(item.getProduct()), item.getQuantity(),
 					                      Float.parseFloat(item.getPrice().replace("$", "")),
-					                      item.getPrice().substring(0, item.getPrice().indexOf("$")),
+					                      item.getPrice().substring(0, item.getPrice().indexOf("$") + 1),
 					                      item.getType(), item.getIndustry(), item.getOrigin());
 			listaEstoques.add(estoque);
+			//estoqueRepository.saveAndFlush(estoque);
 		});
-		
 		Iterable<Estoque> it = listaEstoques;
 		estoqueRepository.saveAll(it);
-		return false;
+		return "OK - Gravou " + listaEstoques.size() + " itens.";
 		
 	}
 
@@ -79,5 +81,16 @@ public class ProdutoServiceImpl implements ProdutoService {
         List<EstoqueHelper> lista = new Gson().fromJson(jsonText, collectionType);
         return lista;
     }
+	
+	public Produto obterProdutoExistenteOuNovo(String sigla) {
+		Produto produto;
+		Optional<Produto> opt = produtoRepository.findBySigla(sigla);
+		if(opt.isPresent())
+			produto = opt.get();
+		else
+			produto = new Produto(sigla);
+			produto = produtoRepository.save(produto);
+		return produto;
+	}
 	
 }

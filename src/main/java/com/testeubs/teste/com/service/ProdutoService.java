@@ -5,7 +5,7 @@ import com.testeubs.teste.com.model.Venda;
 
 public interface ProdutoService {
 	
-	public boolean carregarDados() throws Exception;
+	public String carregarDados() throws Exception;
 	public List<Venda> calcularVenda(String produtoSigla, int qtdeLogistas);
 	
 }

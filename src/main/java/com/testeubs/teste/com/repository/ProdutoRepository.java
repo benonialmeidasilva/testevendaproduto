@@ -10,7 +10,7 @@ import com.testeubs.teste.com.model.Produto;
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
-	Optional<Produto> findBySigla(String lastname);
+	Optional<Produto> findBySigla(String sigla);
 
 	default Optional<Produto> findBySigla(Produto produto) {
 		return findBySigla(produto.getSigla());

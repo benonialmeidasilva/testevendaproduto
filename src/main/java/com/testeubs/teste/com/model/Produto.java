@@ -5,12 +5,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
+
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
@@ -22,15 +23,16 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 public class Produto {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int codigo;
-	
+	@Column(unique=true, nullable=false)
 	private String sigla;
 	
+	@OrderBy("price desc, quantity desc")
 	@OneToMany(mappedBy = "produto")
 	private List<Estoque> estoques;
 	
 	
+	public Produto() {
+	}
 	
 	public Produto(String sigla) {
 		this.sigla = sigla;

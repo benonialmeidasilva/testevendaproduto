@@ -28,16 +28,15 @@ public class ProdutoController {
         return response;
     }
 	
-	@Transactional
 	@ResponseBody
 	@RequestMapping(value="/carregarDados", method=RequestMethod.GET)
     public ResponseEntity<String> carregarDados()  {
 		ResponseEntity<String> response;
 		try {
-			produtoService.carregarDados();
-			response = new ResponseEntity<String>("Dados Carregados com sucesso.", HttpStatus.OK);
+			String retornoSaveItens = produtoService.carregarDados();
+			response = new ResponseEntity<String>(retornoSaveItens, HttpStatus.OK);
 		} catch (Exception e) {
-			response = new ResponseEntity<String>("Os dados não foram carregados! " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+			response = new ResponseEntity<String>("Erro - Os dados não foram carregados! " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 			e.printStackTrace();
 		}
         return response;
