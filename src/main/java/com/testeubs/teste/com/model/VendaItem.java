@@ -11,8 +11,8 @@ import lombok.ToString;
 @AllArgsConstructor
 public class VendaItem {
 	
-	private Produto produto;
-	private long quantity;
+	private String produto_sigla;
+	private Long quantity;
 	private float price;
 	private String price_unit;
 	private String type;

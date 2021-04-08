@@ -33,7 +33,7 @@ public class Estoque {
 	@JoinColumn(name="sigla")
 	private Produto produto;
 	
-	private long quantity;
+	private Long quantity;
 	private float price;
 	private String price_unit;
 	private String type;

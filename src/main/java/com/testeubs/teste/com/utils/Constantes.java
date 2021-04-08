@@ -2,6 +2,8 @@ package com.testeubs.teste.com.utils;
 
 public class Constantes {
 	
+	public static boolean CARGA_DADOS_INICIADA = false;
+	
 	public interface PATHS_ARQUIVOS_JSON_PRODUTOS {
 		
 		public static final String PATH_ARQUIVO_1 = "src/main/resources/static/massa_produtos/data_1.json";

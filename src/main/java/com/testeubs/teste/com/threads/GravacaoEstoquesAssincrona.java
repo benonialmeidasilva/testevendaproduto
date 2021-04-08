@@ -3,12 +3,12 @@ package com.testeubs.teste.com.threads;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 import com.testeubs.teste.com.model.Estoque;
 import com.testeubs.teste.com.model.Produto;
 import com.testeubs.teste.com.model.helper.EstoqueHelper;
 import com.testeubs.teste.com.repository.EstoqueRepository;
 import com.testeubs.teste.com.repository.ProdutoRepository;
+import com.testeubs.teste.com.utils.Constantes;
 
 public class GravacaoEstoquesAssincrona implements Runnable {
 	
@@ -42,6 +42,7 @@ public class GravacaoEstoquesAssincrona implements Runnable {
 		estoqueRepository.deleteAll();
 		Iterable<Estoque> it = listaEstoques;
 		estoqueRepository.saveAll(it);
+		Constantes.CARGA_DADOS_INICIADA = false;
 		System.out.println("Tarefa executada.");
 	}
 

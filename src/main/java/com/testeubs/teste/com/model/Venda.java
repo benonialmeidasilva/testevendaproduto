@@ -16,10 +16,24 @@ public class Venda {
 	
 	private List<VendaItem> itens;
 	
-	private long quantidadeTotal;
+	private Long quantidadeTotal;
 	
 	private float valorFinanceiro;
 	
 	private float precoMedio;
+	
+	
+	
+	public void calcularTotais() {
+		if(itens != null) {
+			quantidadeTotal = new Long(0);
+			valorFinanceiro = 0;
+			itens.forEach(item -> {
+				quantidadeTotal = quantidadeTotal + item.getQuantity();
+				valorFinanceiro = valorFinanceiro + (item.getQuantity() * item.getPrice());
+			});
+			precoMedio = valorFinanceiro / quantidadeTotal;
+		}
+	}
 	
 }

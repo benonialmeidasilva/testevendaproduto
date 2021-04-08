@@ -17,9 +17,9 @@ Abaixo, segue os links disponíveis para realização dos testes, basta abrir os
 https://testeubs.herokuapp.com/carregarDados
  
  
-## Para calcular as vendas, basta acessar a URL, inserindo produto e quantidade no lugar apontado dentro das chaves {}:
+## Para calcular as vendas, basta acessar a URL, inserindo produto e quantidade de lojas no lugar apontado dentro das chaves {}, e o sistema retornará os dados das vendas distribuidas entre as lojas, no formato JSON:
  
- https://testeubs.herokuapp.com/calcularVenda/{produto}/{quantidade_logistas}
+https://testeubs.herokuapp.com/calcularVenda/{produto}/{quantidade_lojas}
  
 Ex: https://testeubs.herokuapp.com/calcularVenda/EMMS/2
  

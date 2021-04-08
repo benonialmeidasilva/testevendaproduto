@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.testeubs.teste.com.model.Venda;
 import com.testeubs.teste.com.service.impl.ProdutoServiceImpl;
+import com.testeubs.teste.com.utils.Constantes;
 
 @RestController
 public class ProdutoController {
@@ -22,10 +22,20 @@ public class ProdutoController {
 	
 	@ResponseBody
 	@GetMapping(value="calcularVenda/{produto}/{qtde}")
-    public ResponseEntity<List<Venda>> calcularVenda(@PathVariable String produto, @PathVariable int qtde) {
-		List<Venda> lista = produtoService.calcularVenda(produto, qtde);
-		ResponseEntity<List<Venda>> response = new ResponseEntity<List<Venda>>(lista, HttpStatus.OK);
-        return response;
+    public ResponseEntity<?> calcularVenda(@PathVariable String produto, @PathVariable int qtde) {
+		try {
+			List<Venda> lista = produtoService.calcularVenda(produto, qtde);
+			if(lista != null && lista.size() > 0) {
+				return ResponseEntity.ok(lista);
+			}
+			else {
+				return ResponseEntity.ok("Não foram encontrados estoques para o produto desejado! Se o produto digitado estiver correto, favor executar a carga dos dados, ou aguardar até que ela seja finalizada e tentar novamente.");
+			}
+		}
+		catch(Exception e){
+			e.printStackTrace();
+			return ResponseEntity.badRequest().build();
+		}
     }
 	
 	@ResponseBody
@@ -36,7 +46,8 @@ public class ProdutoController {
 			String retornoSaveItens = produtoService.carregarDados();
 			response = new ResponseEntity<String>(retornoSaveItens, HttpStatus.OK);
 		} catch (Exception e) {
-			response = new ResponseEntity<String>("Erro - Os dados não foram carregados! " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+			Constantes.CARGA_DADOS_INICIADA = false;
+			response = new ResponseEntity<String>("Erro - Os dados não foram carregados!", HttpStatus.INTERNAL_SERVER_ERROR);
 			e.printStackTrace();
 		}
         return response;
