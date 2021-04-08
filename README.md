@@ -4,6 +4,8 @@ Projeto de teste em JAVA para armazenamento de dados de estoque de produtos e c�
 
 Foi desenvolvido o back-end do projeto e realizado deploy na plataforma do Heroku, dessa forma ele está disponível na núvem para testes.
 
+**OBS: O Heroku baixa as aplicações quando não estão sendo executas a algum tempo, logo, na primeira requisição durante o teste, o sistema subirá automaticamente, porém ficará lenta a primeira requisição até o sistema subir completamente.
+
 
 
 
