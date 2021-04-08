@@ -43,7 +43,22 @@ public class ProdutoController {
     public ResponseEntity<String> carregarDados()  {
 		ResponseEntity<String> response;
 		try {
-			String retornoSaveItens = produtoService.carregarDados();
+			String retornoSaveItens = produtoService.carregarDados(false);
+			response = new ResponseEntity<String>(retornoSaveItens, HttpStatus.OK);
+		} catch (Exception e) {
+			Constantes.CARGA_DADOS_INICIADA = false;
+			response = new ResponseEntity<String>("Erro - Os dados não foram carregados!", HttpStatus.INTERNAL_SERVER_ERROR);
+			e.printStackTrace();
+		}
+        return response;
+    }
+	
+	@ResponseBody
+	@RequestMapping(value="/recarregarDados", method=RequestMethod.GET)
+    public ResponseEntity<String> recarregarDados()  {
+		ResponseEntity<String> response;
+		try {
+			String retornoSaveItens = produtoService.carregarDados(true);
 			response = new ResponseEntity<String>(retornoSaveItens, HttpStatus.OK);
 		} catch (Exception e) {
 			Constantes.CARGA_DADOS_INICIADA = false;

@@ -36,7 +36,7 @@ public class ProdutoServiceImpl implements ProdutoService {
 	
 	@Override
 	@Transactional
-	public String carregarDados() throws Exception{
+	public String carregarDados(boolean recarregar) throws Exception{
 		
 		if(!Constantes.CARGA_DADOS_INICIADA) {
 			
@@ -52,7 +52,7 @@ public class ProdutoServiceImpl implements ProdutoService {
 			listaItens.addAll(lerEstoquesEmArquivoJSon(pathArquivo3.toAbsolutePath().toString()));
 			listaItens.addAll(lerEstoquesEmArquivoJSon(pathArquivo4.toAbsolutePath().toString()));
 			
-			if(estoqueRepository.count() != Long.valueOf(listaItens.size())) {
+			if(estoqueRepository.count() != Long.valueOf(listaItens.size()) || recarregar) {
 				GravacaoEstoquesAssincrona gravacaoEstoquesAssincrona = new GravacaoEstoquesAssincrona(listaItens, estoqueRepository, produtoRepository);
 			    Thread tarefaAssincrona = new Thread(gravacaoEstoquesAssincrona);
 			    tarefaAssincrona.start();
@@ -60,6 +60,7 @@ public class ProdutoServiceImpl implements ProdutoService {
 				return "Solicitação enviada, o sistema está gravando " + listaItens.size() + " itens.";
 			}
 			else {
+				Constantes.CARGA_DADOS_INICIADA = false;
 				return "Todos os " + listaItens.size() + " itens já estão gravados na base.";
 			}
 		}

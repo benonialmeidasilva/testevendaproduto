@@ -51,5 +51,16 @@ class ProdutoControllerTest {
 			fail("Falha no endpoint de carga dos dados");
 		}
 	}
+	
+	@Test
+	void testRecarregarDados() {
+		try {
+			ResponseEntity<String> response = produtoController.recarregarDados();
+			assertEquals(response.getStatusCode(), HttpStatus.OK);
+		}
+		catch(Exception e) {
+			fail("Falha no endpoint de carga dos dados");
+		}
+	}
 
 }

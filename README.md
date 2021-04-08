@@ -39,4 +39,9 @@ Para conectar, deve inserir os valores:
  
 **Password:** teste123
 
+
+## Para testar a carga de dados dos arquivos JSON para banco de dados novamente, basta acessar a URL
+ 
+https://testeubs.herokuapp.com/recarregarDados
+
  
