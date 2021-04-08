@@ -21,7 +21,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @ToString
 @AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
-@Table(name="produto")
+@Table(name="estoque")
 public class Estoque {
 	
 	@Id
