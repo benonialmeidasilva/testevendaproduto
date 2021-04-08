@@ -1,10 +1,12 @@
 package com.testeubs.teste.com.model.helper;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class EstoqueHelper {
 	
 	private String product;

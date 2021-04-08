@@ -10,6 +10,11 @@ import com.testeubs.teste.com.repository.EstoqueRepository;
 import com.testeubs.teste.com.repository.ProdutoRepository;
 import com.testeubs.teste.com.utils.Constantes;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class GravacaoEstoquesAssincrona implements Runnable {
 	
 	private EstoqueRepository estoqueRepository;
