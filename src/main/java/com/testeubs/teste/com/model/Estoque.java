@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,7 +29,7 @@ public class Estoque {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long codigo;
 	
-	@ManyToOne(cascade=javax.persistence.CascadeType.MERGE)
+	@ManyToOne(cascade=javax.persistence.CascadeType.MERGE, fetch=FetchType.EAGER)
 	@JoinColumn(name="sigla")
 	private Produto produto;
 	
@@ -50,5 +51,7 @@ public class Estoque {
 		this.industry = industry;
 		this.origin = origin;
 	}
+	
+	public Estoque() {}
 	
 }

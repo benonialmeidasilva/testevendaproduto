@@ -8,6 +8,7 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
@@ -29,7 +30,7 @@ public class Produto {
 	private String sigla;
 	
 	@OrderBy("price desc, quantity desc")
-	@OneToMany(mappedBy = "produto")
+	@OneToMany(mappedBy="produto", fetch=FetchType.EAGER)
 	private List<Estoque> estoques;
 	
 	

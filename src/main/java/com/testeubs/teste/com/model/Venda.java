@@ -11,8 +11,6 @@ import java.util.List;
 @ToString
 @AllArgsConstructor
 public class Venda {
-
-	private int codigo;
 	
 	private String logista;
 	

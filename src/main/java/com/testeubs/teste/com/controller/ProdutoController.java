@@ -4,7 +4,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,10 +21,9 @@ public class ProdutoController {
 	private ProdutoServiceImpl produtoService;
 	
 	@ResponseBody
-	@RequestMapping(value="/calcularVenda", method=RequestMethod.GET)
-    public ResponseEntity<List<Venda>> calcularVenda(@RequestParam("produtoSigla") String produtoSigla,
-    		                                         @RequestParam("qtdeLogistas") int qtdeLogistas) {
-		List<Venda> lista = produtoService.calcularVenda(produtoSigla, qtdeLogistas);
+	@GetMapping(value="calcularVenda/{produto}/{qtde}")
+    public ResponseEntity<List<Venda>> calcularVenda(@PathVariable String produto, @PathVariable int qtde) {
+		List<Venda> lista = produtoService.calcularVenda(produto, qtde);
 		ResponseEntity<List<Venda>> response = new ResponseEntity<List<Venda>>(lista, HttpStatus.OK);
         return response;
     }
