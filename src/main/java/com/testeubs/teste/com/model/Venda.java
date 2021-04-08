@@ -16,7 +16,7 @@ public class Venda {
 	
 	private String logista;
 	
-	private List<Estoque> estoques;
+	private List<VendaItem> itens;
 	
 	private long quantidadeTotal;
 	

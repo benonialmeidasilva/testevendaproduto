@@ -11,6 +11,7 @@ import javax.persistence.EntityListeners;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
+import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -20,6 +21,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @ToString
 @AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
+@Table(name="produto")
 public class Produto {
 	
 	@Id
