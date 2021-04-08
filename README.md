@@ -4,26 +4,26 @@
  
 ## Para carregar os dados dos arquivos JSON no banco de dados, basta acessar a URL
  
-<p> https://testeubs.herokuapp.com/carregarDados </p>
+https://testeubs.herokuapp.com/carregarDados
  
  
 ## Para calcular as vendas, basta acessar a URL, inserindo produto e quantidade no lugar apontado dentro das chaves {}:
  
  https://testeubs.herokuapp.com/calcularVenda/{produto}/{quantidade_logistas}
  
-<p> Ex: https://testeubs.herokuapp.com/calcularVenda/EMMS/2 </p>
+Ex: https://testeubs.herokuapp.com/calcularVenda/EMMS/2
  
  
 ## Para acessar o banco de dados, deve acessar através da seguinte URL
   
-<p> https://testeubs.herokuapp.com/h2-console </p>
+https://testeubs.herokuapp.com/h2-console
  
-<p> Para conectar, deve inserir os valores: </p>  
+Para conectar, deve inserir os valores: 
  
-<p> JDBC URL: jdbc:h2:mem:testubsdb </p>
+**JDBC URL:** jdbc:h2:mem:testubsdb
  
-<p> User Name: sa </p>
+**User Name:** sa
  
-<p> Password: teste123 </p>
+**Password:** teste123
 
  
