@@ -1,6 +1,16 @@
 # testeubs
- Projeto de teste de cálculo de produtos
  
+Projeto de teste em JAVA para armazenamento de dados de estoque de produtos e cálculo de vendas distribuidas entre logistas.
+
+Foi desenvolvido o back-end do projeto e realizado deploy na plataforma do Heroku, dessa forma ele está disponível na núvem para testes.
+
+
+
+
+Abaixo, segue os links disponíveis para realização dos testes, basta abrir os links no navegador web.
+ 
+
+
  
 ## Para carregar os dados dos arquivos JSON no banco de dados, basta acessar a URL
  
