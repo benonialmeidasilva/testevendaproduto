@@ -46,4 +46,12 @@ Para conectar, deve inserir os valores:
  
 https://testevendaproduto.herokuapp.com/recarregarDados
 
+<br></br><br></br>
+
+# Para executar o projeto na máquina local, basta seguir o seguinte tutorial:
+
+<img src="/src/main/resources/static/images/readme_info/img1.png">
+
+<img src="/src/main/resources/static/images/readme_info/img1.png">
+
  
