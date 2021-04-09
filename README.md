@@ -44,8 +44,41 @@ https://testevendaproduto.herokuapp.com/recarregarDados
 
 <br></br><br></br>
 
-# Para executar o projeto na máquina local, basta seguir o seguinte tutorial:
+# Para executar o projeto na máquina local através do prompt de comando, basta seguir o seguinte tutorial:
 
+<br></br>
+No link desde repositório, clicar em "Code > Download ZIP" e extrair o arquivo ZIP do download em uma pasta do computador.
+
+<img src="/src/main/resources/static/images/readme_info/img1.png">
+
+Após extrair o arquivo, acessar a pasta que foi extraída no prompt de comando, e dentro dela executar o comando:
+
+mvn clean package spring-boot:run
+
+Exemplo: C:\Users\benon\Documents\GitHub\testevendaproduto> mvn clean package spring-boot:run
+
+<img src="/src/main/resources/static/images/readme_info/imgPrompt1.png">
+
+Após a execução do comando, o sistema estará disponível para teste
+
+<img src="/src/main/resources/static/images/readme_info/imgPrompt2.png">
+
+**OBS: Para funcionar corretamente, é necessário que estejam instalados o JAVA JDK 8 e o Maven.
+
+<br></br>
+## Os links para utilização do sistema na máquina local após a aplicação ser iniciada são:
+
+http://localhost:8080/carregarDados
+
+http://localhost:8080/calcularVenda/{produto}/{quantidade_lojas}
+
+http://localhost:8080/recarregarDados
+
+http://localhost:8080/h2-console
+
+<br></br><br></br>
+
+# Para executar o projeto na máquina local na IDE Eclipse, basta seguir o seguinte tutorial:
 <br></br>
 Será necessário possuir instalados na máquina:
 
