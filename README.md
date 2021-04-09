@@ -38,7 +38,7 @@ Para conectar, deve inserir os valores:
 **Password:** teste123
 
 
-## Para testar a carga de dados dos arquivos JSON para banco de dados novamente, basta acessar a URL
+## Para reexecutar a carga de dados dos arquivos JSON para banco de dados, basta acessar a URL
  
 https://testevendaproduto.herokuapp.com/recarregarDados
 
@@ -52,42 +52,43 @@ No link desde repositório, clicar em "Code > Download ZIP" e extrair o arquivo 
 <br></br>
 Para testar o projeto na máquina local será necessário possuir instalados, a IDE Eclipse (disponível para download no link https://www.eclipse.org/downloads/packages/release/2019-12/r) e também o JAVA JDK (disponível para download no link https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html).
 
-<br></br>
 Abrir o Eclipse, e acessar o menu "File > Import..."
+
 <img src="/src/main/resources/static/images/readme_info/img2.png">
 
 <br></br>
 Na janela do import, selecionar "Maven > Existing Maven Projects"
+
 <img src="/src/main/resources/static/images/readme_info/img3.png">
 
 <br></br>
 Na janela que abriu, clicar no botão Browse, selecionar a pasta que foi extraida do arquivo ZIP baixado do repositório, marcar o checkbox da linha que iniciar com a descrição "/pom.xml ...", e clicar no botão Finish.
+
 <img src="/src/main/resources/static/images/readme_info/img4.png">
 
 <br></br>
 Após o projeto ser carregado, poderá aparecer um ícone de exclamação "!" vermelho na pasta raiz do projeto, apenas aguardar pois o Maven irá atualizar os arquivos .jars necessários na máquina. (Esse processo é um download, e possíveis bloqueios de firewall, proxy ou antivirus poderão interferir).
 Caso o exclamação não desapareça automaticamente após alguns minutos, favor clicar com o botão direito na pasta raiz do projeto, e clicar no menu "Maven > Update Project...", clicar no botão OK na janela que abrir e aguardar.
+
 <img src="/src/main/resources/static/images/readme_info/img5.png">
 
 <br></br>
 Após o projeto completamente carregado e não haver nenhum ícone "x" ou "!" na pasta raiz do projeto, ele poderá ser executado. Para isso basta selecionar a pasta raiz do projeto, clicar no ícone de opções do botão Run, e clicar na opção "TesteApplication".
+
 <img src="/src/main/resources/static/images/readme_info/img6.png">
 
 <br></br>
 Na aba Console, serão descritos os logs de inicialização do projeto, e o projeto estará pronto para uso após descrever a linha "Starded TesteApplication in..."
+
 <img src="/src/main/resources/static/images/readme_info/img7.png">
 
 <br></br>
 ## Os links para utilização do sistema na máquina local são:
 
-<br></br>
 http://localhost:8080/carregarDados
 
-<br></br>
 http://localhost:8080/calcularVenda/{produto}/{quantidade_lojas}
 
-<br></br>
 http://localhost:8080/recarregarDados
 
-<br></br>
 http://localhost:8080/h2-console
