@@ -54,7 +54,7 @@ Após extrair o arquivo, acessar a pasta que foi extraída no prompt de comando,
 
 mvn clean package spring-boot:run
 
-Exemplo: C:\Users\benon\Documents\GitHub\testevendaproduto> mvn clean package spring-boot:run
+Exemplo: C:\Users\benon\Desktop\testevendaproduto-main>mvn clean package spring-boot:run
 
 <img src="/src/main/resources/static/images/readme_info/imgPrompt1.png">
 
