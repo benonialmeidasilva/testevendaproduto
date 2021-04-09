@@ -6,7 +6,7 @@ Foi desenvolvido o back-end do projeto e realizado deploy na plataforma do Herok
 
 **OBS: O Heroku baixa as aplicações quando não estão sendo executas a algum tempo, logo, o sistema subirá automaticamente, porém a primeira requisição poderá ficar lenta até o sistema subir completamente.
 
-Recomento acessar primeiro a URL https://testeubs.herokuapp.com/h2-console , pois quando carregar a página o sistema já subiu, dessa forma poderão ser testadas as funções de carga dos dados e de cálculo normalmente. 
+Recomento acessar primeiro a URL https://testevendaproduto.herokuapp.com/h2-console , pois quando carregar a página o sistema já subiu, dessa forma poderão ser testadas as funções de carga dos dados e de cálculo normalmente. 
 
 
 
@@ -17,23 +17,23 @@ Abaixo, segue os links disponíveis para realização dos testes, basta abrir os
  
 ## Para carregar os dados dos arquivos JSON no banco de dados, basta acessar a URL
  
-https://testeubs.herokuapp.com/carregarDados
+https://testevendaproduto.herokuapp.com/carregarDados
  
  
 ## Para calcular as vendas, basta acessar a URL, inserindo produto e quantidade de lojas no lugar apontado dentro das chaves {}, e o sistema retornará os dados das vendas distribuidas entre as lojas, no formato JSON:
  
-https://testeubs.herokuapp.com/calcularVenda/{produto}/{quantidade_lojas}
+https://testevendaproduto.herokuapp.com/calcularVenda/{produto}/{quantidade_lojas}
  
-Ex: https://testeubs.herokuapp.com/calcularVenda/EMMS/2
+Ex: https://testevendaproduto.herokuapp.com/calcularVenda/EMMS/2
  
  
 ## Para acessar o banco de dados, deve acessar através da seguinte URL
   
-https://testeubs.herokuapp.com/h2-console
+https://testevendaproduto.herokuapp.com/h2-console
  
 Para conectar, deve inserir os valores: 
  
-**JDBC URL:** jdbc:h2:mem:testubsdb
+**JDBC URL:** jdbc:h2:mem:testevendaprodutodb
  
 **User Name:** sa
  
@@ -42,6 +42,6 @@ Para conectar, deve inserir os valores:
 
 ## Para testar a carga de dados dos arquivos JSON para banco de dados novamente, basta acessar a URL
  
-https://testeubs.herokuapp.com/recarregarDados
+https://testevendaproduto.herokuapp.com/recarregarDados
 
  
