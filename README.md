@@ -63,7 +63,7 @@ Após a execução do comando, o sistema estará disponível para teste
 
 <img src="/src/main/resources/static/images/readme_info/imgPrompt2.png">
 
-**OBS: Para funcionar corretamente, é necessário que estejam instalados o JAVA JDK 8 e o Maven.
+**OBS: Para funcionar corretamente, é necessário que estejam instalados o JAVA JDK 8 e o Maven, e configuradas as devidas variáveis de ambiente.
 
 <br></br>
 ## Os links para utilização do sistema na máquina local após a aplicação ser iniciada são:
