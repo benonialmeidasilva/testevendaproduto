@@ -46,7 +46,6 @@ https://testevendaproduto.herokuapp.com/recarregarDados
 
 # Para executar o projeto na máquina local através do prompt de comando, basta seguir o seguinte tutorial:
 
-<br></br>
 No link desde repositório, clicar em "Code > Download ZIP" e extrair o arquivo ZIP do download em uma pasta do computador.
 
 <img src="/src/main/resources/static/images/readme_info/img1.png">
