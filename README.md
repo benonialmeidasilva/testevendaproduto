@@ -47,7 +47,11 @@ https://testevendaproduto.herokuapp.com/recarregarDados
 # Para executar o projeto na máquina local, basta seguir o seguinte tutorial:
 
 <br></br>
-Será necessário possuir instalados na máquina, a IDE Eclipse (disponível para download no link https://www.eclipse.org/downloads/packages/release/2019-12/r) e também o JAVA JDK (disponível para download no link https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html).
+Será necessário possuir instalados na máquina:
+
+-IDE Eclipse (disponível para download no link https://www.eclipse.org/downloads/packages/release/2019-12/r).
+
+-JAVA JDK (disponível para download no link https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html).
 
 <br></br>
 No link desde repositório, clicar em "Code > Download ZIP" e extrair o arquivo ZIP do download em uma pasta do computador.
