@@ -90,7 +90,7 @@ Na aba Console, serão descritos os logs de inicialização do projeto, e o proj
 <img src="/src/main/resources/static/images/readme_info/img7.png">
 
 <br></br>
-## Os links para utilização do sistema na máquina local são:
+## Os links para utilização do sistema na máquina local após a aplicação ser iniciada são:
 
 http://localhost:8080/carregarDados
 
