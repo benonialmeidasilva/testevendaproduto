@@ -25,6 +25,8 @@ https://testevendaproduto.herokuapp.com/carregarDados
 https://testevendaproduto.herokuapp.com/calcularVenda/{produto}/{quantidade_lojas}
  
 Ex: https://testevendaproduto.herokuapp.com/calcularVenda/EMMS/2
+
+**OBS: A carga dos dados é feita em background, dessa forma, após executar a carga no link ".../carregarDados" e não mostrar resultados neste link de calculo de vendas, vai tentando atualizar a página novamente que em alguns segundos o processo da carga termina e mostrará dados no cálculo da venda. O servidor do Heroku possui poucos recursos e o processo fica mais lento que em uma máquina local ou servidor de aplicações comum. 
  
  
 ## Para acessar o banco de dados, deve acessar através da seguinte URL
